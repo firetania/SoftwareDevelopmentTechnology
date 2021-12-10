@@ -57,6 +57,20 @@ namespace Task3
             var hash = existingItem.Key.GetHashCode() % size;
             items[hash].Remove(existingItem);
         }
+        public void Clear()
+        {
+            size = 0;
+            items = new LinkedList<KeyValuePair<TKey, TValue>>[size];
+        }
+        public bool Contains(KeyValuePair<TKey, TValue> itemToFind)
+        {
+            var hash = itemToFind.Key.GetHashCode() % size;
+            if (items[hash].Contains(itemToFind))
+            {
+                return true;
+            }
+            return false;
+        }
         public void Show()
         {
             foreach(LinkedList<KeyValuePair<TKey, TValue>> curLst in items)

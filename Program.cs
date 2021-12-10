@@ -14,7 +14,15 @@ namespace Task3
             KeyValuePair<string, int> first = new KeyValuePair<string, int>("Ivanov", 5);
             KeyValuePair<string, int> second = new KeyValuePair<string, int>("Petrov", 4);
             obj.Insert(first);
-            obj.Show();
+            //obj.Show();
+            foreach (LinkedList<KeyValuePair<string, int>> curLst in obj.Items)
+            {
+                foreach (KeyValuePair<string, int> kvp in curLst)
+                {
+                    Console.WriteLine("Key = {0}, Value = {1} ", kvp.Key, kvp.Value);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
