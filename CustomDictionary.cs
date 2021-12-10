@@ -57,5 +57,16 @@ namespace Task3
             var hash = existingItem.Key.GetHashCode() % size;
             items[hash].Remove(existingItem);
         }
+        public void Show()
+        {
+            foreach(LinkedList<KeyValuePair<TKey, TValue>> curLst in items)
+            {
+                foreach (KeyValuePair<TKey, TValue> kvp in curLst)
+                {
+                    Console.WriteLine("Key = {0}, Value = {1} ", kvp.Key, kvp.Value);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
