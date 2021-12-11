@@ -189,22 +189,7 @@ namespace Task3
 
             if (count > array.Length - arrayIndex - 1)
                 throw new ArgumentException("Not enough space in array");
-
-
-            //for (int i = 0; i < items.Length; i++)
-            //{
-            //    foreach (var item in items[i])
-            //    {
-            //        if (arrayIndex >= array.Length) 
-            //        {
-            //            break;
-            //        }
-            //        array[arrayIndex] = item;
-            //        arrayIndex++;
-            //    }
-            //}
-
-            //array = new KeyValuePair<TKey, TValue>[size - arrayIndex];
+            
             for (int index = arrayIndex; index < size; ++index)
             {
                 int curID = 0;
