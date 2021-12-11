@@ -133,6 +133,15 @@ namespace Task3
         public void Add(KeyValuePair<TKey, TValue> newItem)
         {
             var hash = Math.Abs(newItem.Key.GetHashCode()) % items.Length;
+            
+            foreach(var element in items[hash])
+            {
+                if (element.Key.Equals(newItem.Key))
+                {
+                    throw new ArgumentOutOfRangeException("An element with the same key has already been added.");
+                }
+            }
+
             count++;
             items[hash].AddLast(newItem);
             keys.Add(newItem.Key);
