@@ -43,7 +43,7 @@ namespace Task3
             array[2] = example;
             Console.WriteLine("Copyto");
             foreach (var element in array)
-                Console.WriteLine("{0} {1}", element.Key, element.Value);
+                Console.WriteLine("Key = {0}, Value = {1}", element.Key, element.Value);
         }
     }
 }
